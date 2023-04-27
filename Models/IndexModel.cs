@@ -4,15 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using FINALNIPROJEKTBOOP.AppData;
 
 namespace FINALNIPROJEKTBOOP.Models
 {
-    public class Movie
-    {
-        public string NameOfMovie { get; set; }
-        public int ReleaseDate { get; set; }
-        public string Genre { get; set; }
-    }
+    
     public class IndexModel
     {
         private readonly string _connectionString;

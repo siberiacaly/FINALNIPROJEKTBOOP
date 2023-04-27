@@ -1,0 +1,24 @@
+﻿@using FINALNIPROJEKTBOOP.Models
+
+@{
+    ViewData["Title"] = "Edit Movie";
+    var connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DatabazeFilmu;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    var model = new IndexModel(connectionString);
+    var movies = model.GetAllMovies();
+}
+<h1>@ViewData["Title"]</h1>
+<u1>
+    <form method="post">
+    <table>
+        @foreach (var movie in movies)
+        {
+            <tr>
+                    <td><input type="text" id="NameOfMovie" name="NameOfMovie" value="@movie.NameOfMovie" /></td>
+                    <td><input type="text" id="Genre" name="Genre" value="@movie.Genre" /></td>
+                    <td><input type="number" id="releaseDate" name="ReleaseDate" value="@movie.ReleaseDate" /></td>
+            </tr>
+        }
+    </table>
+    <button type="submit">Save Changes</button>
+    </form>
+</u1>

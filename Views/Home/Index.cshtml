@@ -2,18 +2,17 @@
 
 @{
     ViewData["Title"] = "Home Page";
-    var connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DatabazeFilmu;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-    var model = new IndexModel(connectionString);
-    var movies = model.GetAllMovies();
 }
 <h1>@ViewData["Title"]</h1>
 <u1>
-    @foreach (var movie in movies)
+    <table>
+    @foreach (var movie in ViewBag.movies)
     {
-        <li>
-            <h3>@movie.NameOfMovie</h3>
-            <p>@movie.Genre</p>
-            <p>@movie.ReleaseDate</p>
-        </li>
+        <tr>
+            <td>@movie.NameOfMovie</td>
+            <td>@movie.Genre</td>
+            <td>@movie.ReleaseDate</td>
+        </tr>
     }
+    </table>
 </u1>

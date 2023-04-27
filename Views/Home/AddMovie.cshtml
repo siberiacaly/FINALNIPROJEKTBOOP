@@ -1,30 +1,25 @@
 ﻿@using FINALNIPROJEKTBOOP.Models;
 
+
 @{
     ViewData["Title"] = "AddMovie";
-    model = addmoviemodel();
+   
 }
 
 
 
-@using (Html.BeginForm("AddMovie", "Movies", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.NameOfMovie)
-        @Html.EditorFor(model => model.NameOfMovie, new { htmlAttributes = new { @class = "form-control" } })
+<form method="post">
+    <div>
+        <label for="nameOfMovie">Name of Movie:</label>
+        <input type="text" id="nameOfMovie" name="NameOfMovie" />
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ReleaseDate)
-        @Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+    <div>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="Genre" />
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Genre)
-        @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+    <div>
+        <label for="releaseDate">Release Date:</label>
+        <input type="number" id="releaseDate" name="ReleaseDate" />
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-}
+    <button type="submit">Add Movie</button>
+</form>
